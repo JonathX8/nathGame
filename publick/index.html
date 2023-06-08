@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bluejack</title>
+
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+
+        .modal .modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="bg-cover bg-no-repeat bg-center" style="background-image: url(/img/bg5.png)">
+        <header class="fixed inset-x-0 top-0 z-50">
+            <nav class="flex items-center justify-between px-6 py-1 lg:px-8 border-b-2" aria-label="Global">
+                <div class="flex lg:flex-1">
+                    <a href="#home" class="-m-1.5 p-1.5">
+                        <img class="h-20 w-20" src="/img/logo.png" alt="LOGO">
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button type="button"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="#home" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+                    <a href="#gallery" class="text-sm font-semibold leading-6 text-gray-900">Gallery</a>
+                    <a href="#about" class="text-sm font-semibold leading-6 text-gray-900">About</a>
+                    <a href="#outlet" class="text-sm font-semibold leading-6 text-gray-900">Outlet</a>
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <button class="modal-open text-sm font-semibold leading-6 text-gray-900 px-4 py-2 rounded-md
+                        bg-indigo-600 hover:bg-indigo-500">Sign
+                        Up</button>
+                </div>
+            </nav>
+            <!-- Mobile menu, show/hide based on menu open state. -->
+            <div class="lg:hidden" role="dialog" aria-modal="true">
+                <!-- Background backdrop, show/hide based on slide-over state. -->
+                <div class="fixed inset-0 z-50"></div>
+                <div
+                    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="sr-only">Bluejack</span>
+                            <img class="h-20 w-20" src="/img/logo.png" alt="">
+                        </a>
+                        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y divide-gray-500/10">
+                            <div class="space-y-2 py-6">
+                                <a href="#home"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                                <a href="#gallery"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Gallery</a>
+                                <a href="#about"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
+                                <a href="#outlet"
+                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Outlet</a>
+                            </div>
+                            <div class="py-6">
+                                <button class="modal-open -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold
+                                    leading-7 text-gray-900 hover:bg-gray-50">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="home" class="relative isolate px-6 pt-14 lg:px-8">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Bluejack Game Shop</h1>
+                    <p class="mt-6 text-lg leading-8 text-white font-semibold font-sans">Welcome to Bluejack Game Shop,
+                        a
+                        famous game store
+                        in Indonesia! We sell various types of game consoles from all manufactures. We are
+                        trying to expand our market to the international level. Through this website, we would like to
+                        introduce ourselves to visitors from different countries. Discover an unforgettable gaming
+                        experience at Bluejack Game Shop!</p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#gallery"
+                            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
+                            started</a>
+                        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span
+                                aria-hidden="true">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <!--Modal sign  up-->
+            <div
+                class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+                <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+
+                <div
+                    class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+
+                    <div
+                        class="modal-close absolute top-20 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+                        <svg class="h-8 w-8 text-black-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="15" y1="9" x2="9" y2="15" />
+                            <line x1="9" y1="9" x2="15" y2="15" /></svg>
+                    </div>
+
+                    <!-- Add margin if you want to see some of the overlay behind the modal-->
+                    <div class="modal-content py-4 text-left px-6">
+                        <!--Title-->
+                        <!-- ganti disni -->
+                        <form>
+                            <div class="mb-6">
+                                <div>
+                                    <label for="first_name"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First
+                                        name</label>
+                                    <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+                                        focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+                                        dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+                                        dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Bluejack"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email
+                                    address</label>
+                                <input type="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="blujack@mail.com" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                                <input type="password" id="password"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="•••••••••" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="confirm_password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Confirm
+                                    password</label>
+                                <input type="password" id="confirm_password"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="•••••••••" required>
+                            </div>
+                            <div class="flex items-start mb-6">
+                                <div class="flex items-center h-5">
+                                    <input id="remember" type="checkbox" value=""
+                                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                                        required>
+                                </div>
+                                <label for="remember"
+                                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I
+                                    agree with the
+                                    <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and
+                                        conditions</a>.</label>
+                            </div>
+                        </form>
+
+                        <!--Footer-->
+                        <div class="flex justify-end pt-2">
+                            <button type="submit"
+                                class="mr-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                            <button
+                                class="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gallery" class="gallery bg-white">
+        <div class="pt-20 pb-6">
+            <h1 class="text-4xl font-bold text-center tracking-tight text-gray-900 sm:text-6xl">Gallery</h1>
+            <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900">Customers also purchased</h2>
+
+                <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/1.jpg" alt="JEDI SURVIVOR"
+                                class="h-100% w-100% object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review1" id="openButton1">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        JEDI SURVIVOR
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/2.jpg" alt="THE LAST OF US"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review2" id="openButton2">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        THE LAST OF US P-1
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$65</p>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/4.jpg" alt="ATLAS FALLEN"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review3" id="openButton3">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        ATLAS FALLEN
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$55</p>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/5.jpg" alt="STREET FIGHTER"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review4" id="openButton4">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        STREET FIGHTER
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$45</p>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/6.jpg" alt="F1 2K23"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review5" id="openButton5">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        F1 2K23
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/7.jpg" alt="LIGHTFALL ANNUAL PASS"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review6" id="openButton6">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        LIGHTFALL ANNUAL PASS
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$35</p>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/8.webp" alt="Dead Island2"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review7" id="openButton7">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Dead Island2
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$45</p>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                            <img src="/album/9.webp" alt="Lords Of The Vallen"
+                                class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                        </div>
+                        <div class="mt-4 flex justify-between">
+                            <div>
+                                <h3 class="text-sm text-gray-700">
+                                    <a href="#review8" id="openButton8">
+                                        <span aria-hidden="true" class="absolute inset-0"></span>
+                                        Lords Of The Vallen
+                                    </a>
+                                </h3>
+                                <p class="mt-1 text-sm text-gray-500">RPG</p>
+                            </div>
+                            <p class="text-sm font-medium text-gray-900">$55</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-10">
+                    <a href="#" aria-label=""
+                        class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">
+                        See all Games
+                        <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+                            <path
+                                d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="about" class="about pb-28 bg-sky-300">
+        <div class="px-4 pt-20 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20 pb-20">
+            <h1 class="mb-8 text-4xl font-bold text-center tracking-tight text-gray-900 sm:text-6xl">About</h1>
+            <div class="grid gap-12 row-gap-8 lg:grid-cols-2">
+                <div class="flex flex-col justify-center">
+                    <div class="max-w-xl mb-6">
+                        <h2
+                            class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+                            Hi Dear, We are from Bluejack Game Shop!
+                        </h2>
+                        <p class="text-base text-gray-700 text-justify md:text-lg">
+                            We are your best online destination for all your gaming needs. With a wide collection of
+                            the
+                            latest and most popular games, we provide a fun and satisfying shopping experience for
+                            game
+                            lovers.
+                        </p>
+                    </div>
+                    <div class="grid gap-8 row-gap-8 sm:grid-cols-2">
+                        <div>
+                            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+                                <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor"
+                                    viewBox="0 0 52 52">
+                                    <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                                </svg>
+                            </div>
+                            <h6 class="mb-2 font-semibold leading-5">
+                                Most popular online games for you
+                            </h6>
+                            <p class="text-sm text-gray-600 text-justify font-semibold">
+                                Get the latest and most popular games with a fun shopping experience. Games from
+                                various
+                                platforms and categories are available. Gaming accessories are also available.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50">
+                                <svg class="w-10 h-10 text-deep-purple-accent-400" stroke="currentColor"
+                                    viewBox="0 0 52 52">
+                                    <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                                </svg>
+                            </div>
+                            <h6 class="mb-2 font-semibold leading-5">
+                                Secure and reliable services
+                            </h6>
+                            <p class="text-sm text-gray-600 text-justify font-semibold">
+                                Enjoy fast and secure service with friendly staff. Happy shopping at Bluejack Game
+                                Shop!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img class="object-cover w-full h-56 rounded shadow-lg sm:h-96" src="../img/img6.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="outlet" class="outlet ">
+        <div class=" px-4 pb-16 pt-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+                <div class="mb-6">
+                    <h1 class="text-4xl font-bold text-center tracking-tight text-gray-900 sm:text-6xl">Outlet</h1>
+                </div>
+                <h2
+                    class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                    <span class="relative inline-block">
+                        <svg viewBox="0 0 52 24" fill="currentColor"
+                            class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                            <defs>
+                                <pattern id="3071a3ad-db4a-4cbe-ac9a-47850b69e4b7" x="0" y="0" width=".135"
+                                    height=".30">
+                                    <circle cx="1" cy="1" r=".7"></circle>
+                                </pattern>
+                            </defs>
+                            <rect fill="url(#3071a3ad-db4a-4cbe-ac9a-47850b69e4b7)" width="52" height="24"></rect>
+                        </svg>
+                        <span class="relative">Bluejack</span>
+                    </span>
+                    Game Shop Outlet
+                </h2>
+                <p class="text-base text-gray-700 md:text-lg">
+                    Find the Right Place for Your Gaming Needs!
+                </p>
+            </div>
+            <div class="grid max-w-screen-lg gap-8 lg:grid-cols-2 sm:mx-auto">
+                <div class="flex flex-col justify-center">
+                    <div class="flex">
+                        <div class="mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h6 class="mb-2 font-semibold leading-5">
+                                Office
+                            </h6>
+                            <p class="text-sm text-gray-900">
+                                Jl. Perintis Kemerdekaan I, Kayu Putih, Kec. Oebobo, Kota Kupang, Nusa Tenggara Tim.
+                                85228
+                            </p>
+                            <hr class="w-full my-6 border-gray-300" />
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
+                                </svg>
+
+                            </div>
+                        </div>
+                        <div>
+                            <h6 class="mb-2 font-semibold leading-5">Store</h6>
+                            <p class="text-sm text-gray-900">
+                                Jl. Perintis Kemerdekaan I No.15, Kayu Putih, Kec. Oebobo, Kota Kupang, Nusa
+                                Tenggara
+                                Tim. 85228
+                            </p>
+                            <hr class="w-full my-6 border-gray-300" />
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="mr-4">
+                            <div class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-indigo-50">
+                                <svg class="w-8 h-8 text-deep-purple-accent-400" stroke="currentColor"
+                                    viewBox="0 0 52 52">
+                                    <polygon stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"
+                                        points="29 13 14 29 25 29 23 39 38 23 27 23"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h6 class="mb-2 font-semibold leading-5">Tell them I hate them</h6>
+                            <p class="text-sm text-gray-900 text-justify">
+                                "Want to explore the exciting world of gaming? Visit Bluejack Game Shop today and
+                                discover the latest collection of games that will blow you away! With friendly
+                                service
+                                and fast delivery, we are ready to fulfill your gaming needs. So, don't miss out on
+                                this
+                                opportunity! Visit Bluejack Game Shop and discover an unforgettable gaming
+                                experience!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-5">
+                    <iframe class="object-cover w-full h-56 col-span-2 rounded shadow-lg"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15708.776444396786!2d123.61220426683755!3d-10.164871592857507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c5683ea8c15d07f%3A0xee0c395e8a9bcec6!2sMARKAS%20GAME%20PS4%20-%20KAYU%20PUTIH!5e0!3m2!1sid!2sid!4v1686059743626!5m2!1sid!2sid"
+                        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        alt="Lokasi"></iframe>
+                    <img class="object-cover w-full h-48 rounded shadow-lg" src="../img/img4.jpg" alt="" />
+                    <img class="object-cover w-full h-48 rounded shadow-lg" src="../album/f2.jpg" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-footer bg-sky-300">
+        <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 border-t-4">
+            <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+                <div class="sm:col-span-2">
+                    <a href="#" aria-label="Go home" title="Company" class="inline-flex items-center">
+                        <img class="w-16" src="../img/logo.png" alt="">
+                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Bluejack
+                            Game</span>
+                    </a>
+                    <div class="mt-6 lg:max-w-sm">
+                        <p class="text-sm text-gray-800">
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam.
+                        </p>
+                        <p class="mt-4 text-sm text-gray-800">
+                            Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                            explicabo.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-2 text-sm mt-5">
+                    <p class="text-base font-bold tracking-wide text-gray-900">Contacts</p>
+                    <div class="flex pt-9">
+                        <!-- phone -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-6 h-6 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="#" aria-label="Our phone" title="Our phone"
+                            class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">0850-123-5021</a>
+                    </div>
+                    <!-- email -->
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-6 h-6 mr-2">
+                            <path
+                                d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                            <path
+                                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                        </svg>
+
+
+                        <a href="#" aria-label="Our email" title="Our email"
+                            class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">bluejack@mail.co</a>
+                    </div>
+                    <!--  map -->
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-6 h-6 mr-2">
+                            <path fill-rule="evenodd"
+                                d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+                                clip-rule="evenodd" />
+                        </svg>
+
+
+                        <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer"
+                            aria-label="Our address" title="Our address"
+                            class="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800">
+                            Jl. Perintis Kemerdekaan I No.15, Kayu Putih
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-5">
+                    <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
+                    <div class="flex items-center mt-1 space-x-3 pt-9">
+                        <a href="#"
+                            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                                <path
+                                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512">
+                                <path
+                                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                            </svg>
+                        </a>
+                        <a href="#"
+                            class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512">
+                                <path
+                                    d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-800">
+                        Bacon ipsum dolor amet short ribs pig sausage prosciutto chicken spare ribs salami.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
+                <p class="text-sm text-white">
+                    © Copyright 2023 Lorem Inc. All rights reserved.
+                </p>
+                <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+                    <li>
+                        <a href="#"
+                            class="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400">F.A.Q</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400">Privacy
+                            Policy</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="text-sm text-white transition-colors duration-300 hover:text-deep-purple-accent-400">Terms
+                            &amp; Conditions</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
