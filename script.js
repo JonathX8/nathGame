@@ -38,22 +38,24 @@ function toggleModal() {
     body.classList.toggle('modal-active')
 };
 
-const videoContainer = document.getElementById('video-container');
-const video = document.getElementById('my-video');
+for (let i = 1; i <= 8; i++) {
+    const videoContainer = document.getElementById(`video-container${i}`);
+    const video = document.getElementById(`my-video${i}`);
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            video.play();
-        } else {
-            video.pause();
-        }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
     });
-});
 
-observer.observe(videoContainer);
+    observer.observe(videoContainer);
 
-video.addEventListener('ended', () => {
-    video.currentTime = 0;
-    video.play();
-});
+    video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        video.play();
+    });
+}
