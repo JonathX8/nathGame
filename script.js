@@ -1,36 +1,3 @@
-// // Array untuk menyimpan closeButton dan openButton
-// var closeButtons = [];
-// var openButtons = [];
-
-// // Array untuk menyimpan review elements
-// var reviews = [];
-
-// // Mengisi array closeButton, openButton, dan reviews dengan elemen-elemen yang sesuai
-// for (var i = 1; i <= 8; i++) {
-//     closeButtons[i] = document.querySelector('#review' + i + ' button');
-//     openButtons[i] = document.querySelector('#openButton' + i);
-//     reviews[i] = document.querySelector('#review' + i);
-// }
-
-// // Event listener untuk closeButton
-// for (var i = 1; i <= 8; i++) {
-//     closeButtons[i].addEventListener('click', (function (index) {
-//         return function () {
-//             reviews[index].style.display = 'none';
-//         }
-//     })(i));
-// }
-
-// // Event listener untuk openButton
-// for (var i = 1; i <= 8; i++) {
-//     openButtons[i].addEventListener('click', (function (index) {
-//         return function () {
-//             reviews[index].style.display = 'block';
-//         }
-//     })(i));
-// }
-
-
 // Mengambil elemen-elemen yang diperlukan
 
 var openmodal = document.querySelectorAll('.modal-open')
@@ -70,3 +37,23 @@ function toggleModal() {
     modal.classList.toggle('pointer-events-none')
     body.classList.toggle('modal-active')
 };
+
+const videoContainer = document.getElementById('video-container');
+const video = document.getElementById('my-video');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    });
+});
+
+observer.observe(videoContainer);
+
+video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.play();
+});
